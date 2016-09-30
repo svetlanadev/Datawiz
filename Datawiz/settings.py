@@ -123,3 +123,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+from dwapi import datawiz
+DW = datawiz.DW('test1@mail.com', 'test2@cbe47a5c9466fe6df05f04264349f32b')
