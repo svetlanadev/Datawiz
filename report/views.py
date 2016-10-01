@@ -14,12 +14,19 @@ import datetime
 
 def index(request):
         client = settings.DW.get_client_info()
-        product = settings.DW.get_product()
-        result = settings.DW.get_products_sale(by='turnover',
+        # [x.room_number() for x in people if check(x)]
+        products = [p['product_id'] for p in settings.DW.get_product().get('results', [])]
+        # product = settings.DW.get_product(products=['2894313', '2894313'])
+        print  '>>>>>>>>>>>>>',  products
+        products.append('sum')
+        print products
+        result = settings.DW.get_products_sale(products=products,
+                                               by='turnover',
                                                date_from=datetime.date(2015, 8, 9),
                                                date_to=datetime.date(2015, 8, 9),
                                                )
-        return render(request, 'index.html', {'client': client, 'product': product, 'result' : result.to_html()})
+        # return render(request, 'index.html', {'client': client, 'product': product, 'result' : result.to_html()})
+        return render(request, 'index.html', {'client': client, 'result': result.to_html()})
 
 
 
