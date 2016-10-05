@@ -4,12 +4,15 @@
 {% block content %}
 <p>TRU BRO DOBRO </p>
 <p>Data is:</p>
+<p>{{turnover1_get|safe}}</p>
+<p>{{p_cat|safe}}</p>
 Client
 <p>{{client|safe}}</p>
 Product
 <!--<p>{{product|safe}}</p>-->
 Result
-<p>{{result|safe}}</p>
+<p>{{turnover2|safe}}</p>
+<p>{{p_cat|safe}}</p>
 <table class="table table-bordered">
     <thead>
     <tr>
@@ -23,10 +26,10 @@ Result
     <tbody>
     <tr>
         <th>Оборот</th>
-        <td>..</td>
-        <td>..</td>
-        <td>..</td>
-        <td>..</td>
+        <td>{{turnover1|safe}}</td>
+        <td>{{turnover2|safe}}</td>
+        <td>{{rate_diff}}</td>
+        <td>{{diff}}</td>
     </tr>
         <tr>
         <th>Кількість товарів</th>
